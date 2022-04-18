@@ -13,7 +13,6 @@ Code :-
         val yamlutil = ToscaExtensionYamlUtil()
         val toscaServiceModel: ToscaServiceModel
         val map: HashMap<String, ByteArray> = HashMap<String, ByteArray>()
-
         var artifactFileString: String = translation.result.substring(0, translation.result.indexOf("serviceTemplates"))
         var YamlString: String = translation.result.substring(translation.result.indexOf("serviceTemplates"))
         toscaServiceModel=yamlutil.yamlToObject<ToscaServiceModel>(YamlString,ToscaServiceModel::class.java)
