@@ -10,9 +10,11 @@ As it was written in kotlin, so i need to write code in kotlin, so somehow i hav
 Solution :- I need to do String manipulation
 I need remove the large string from the given and pass it to the method for proess and take the response and the stick it to the original string for onboarding
 Code :- 
+        
         val yamlutil = ToscaExtensionYamlUtil()
         val toscaServiceModel: ToscaServiceModel
         val map: HashMap<String, ByteArray> = HashMap<String, ByteArray>()
+      
         var artifactFileString: String = translation.result.substring(0, translation.result.indexOf("serviceTemplates"))
         var YamlString: String = translation.result.substring(translation.result.indexOf("serviceTemplates"))
         toscaServiceModel=yamlutil.yamlToObject<ToscaServiceModel>(YamlString,ToscaServiceModel::class.java)
