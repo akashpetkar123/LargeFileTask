@@ -4,6 +4,9 @@ Unable to onboard a large file task
 Problem :- A large file(67 mb file) was unable to upload through 3 microservices, so we need to process this
 Analysis :- there was one method which dont handle this kind on bytes(22 cr bytes) when i print the length of string
 So i need to somehow process this large file i.e onboarding this file
+As this ToscaExtensionYamlUtil().yamlToObject<ToscaServiceModel>(YamlString,ToscaServiceModel::class.java) method does not take that much amount of length of string so we seperate the ArtifactFile String and YamlString.
+So only YamlString is passed to this method, so ToscaServiceModel will be created without ArtifactFileSection.
+Then after that we can manipulate that string and convert into a HashMap and then we can stitch to the ToscaServiceModel which will have the ArtifactFileSection, thats what we have used for solving this problem.
 
 As it was written in kotlin, so i need to write code in kotlin, so somehow i have written the code
 
